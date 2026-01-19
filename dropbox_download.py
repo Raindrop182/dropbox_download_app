@@ -99,7 +99,4 @@ if __name__ == "__main__":
     print(f"Downloading Dropbox folder '{DROPBOX_FOLDER}' to local folder '{DOWNLOAD_FOLDER}'...\n")
     download_folder(dbx, DROPBOX_FOLDER, DOWNLOAD_FOLDER)
     print("\nDownload completed!")
-    
-if __name__ == '__main__':
-        
-    download_folder(dbx,DROPBOX_FOLDER, DOWNLOAD_FOLDER)
+
