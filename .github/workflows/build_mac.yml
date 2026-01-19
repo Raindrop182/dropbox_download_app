@@ -17,11 +17,17 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pyinstaller python-dotenv dropbox tqdm
-      - name: Build Mac executable
+      - name: Build setup executable
         run: |
-          pyinstaller --onefile dropbox_setup.py
-      - name: Upload artifact
+          pyinstaller --onefile dropbox_setup.py --name DropboxSetup
+      - name: Build download executable
+        run: |
+          pyinstaller --onefile dropbox_download.py --name DropboxDownloader
+
+      - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dropbox_setup_mac
-          path: dist/dropbox_setup
+          name: mac-executables
+          path: |
+            dist/DropboxSetup
+            dist/DropboxDownloader
