@@ -23,7 +23,7 @@ jobs:
             pyinstaller --onefile dropbox_setup.py
             pyinstaller --onefile dropbox_download.py
         - name: Upload artifacts
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: Upload Windows artifacts
             path: |
@@ -48,7 +48,7 @@ jobs:
         run: |
           pyinstaller --onefile dropbox_download.py --name DropboxDownloader
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mac-executables
           path: |
